@@ -1,0 +1,46 @@
+<html>
+<!-- Creation date: 25.10.2005 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Unregistered user">
+<meta name="generator" content="AceHTML 5 Pro">
+</head>
+<body>
+здесь необходимо вставлять в текст после каждой запятой слово "бля",
+при этом исключая атрибуты тегов и теги script, style и т.п.
+можно например произвести замену только в текстовых нодах, а можно и между тегами div, p и т.п.
+<script>
+function onsubm(event) {
+/*if (key==0x13) {
+	alert('enter');
+} else {
+	alert(key);
+}*/
+/*for(x in event) {
+document.writeln(x+"<br>");
+}*/
+if (event.keyCode!=null) alert('key_code='+event.keyCode);
+if (event.which!=null) alert('which='+event.which);
+
+}
+</script>
+<div>
+<p>а если так</p>
+<p>и так</p>
+</div>
+
+<p>
+инструкция:<br />
+после загрузки любой веб-страницы вставляем скрипт в адресную строку и нажимаем enter,<br />
+затем ищем в тексте страницы запятые<br />
+</p>
+
+<textarea rows=20 cols=100>
+javascript: function gcn(ch) {for (x in ch) {if (ch[x].nodeType==3) {ch[x].nodeValue=ch[x].nodeValue.replace(new RegExp(',(\\s)', 'g'), unescape('%2C%20%u0431%u043B%u044F%2C')+'$1');} else if (ch[x].nodeType==1 && ch[x].tagName.toLowerCase()!='script' && ch[x].tagName.toLowerCase()!='style') {gcn(ch[x].childNodes);}}}; gcn(document.getElementsByTagName('body')[0].childNodes);
+</textarea>
+
+</body>
+</html>
